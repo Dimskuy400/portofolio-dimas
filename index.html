@@ -1,0 +1,694 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dimas Sunaryadi Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: mengikuti guidebook. Pill nav melayang, hero dengan nama raksasa di belakang foto, lalu Work Gallery, What I Can Do, Achievement, About Me, Contact. Gelap sebagai tema utama. */
+:root {
+  --bg: #0a0f0d;
+  --surface: #121a17;
+  --surface-2: #19231f;
+  --fg: #e9f0ec;
+  --muted: #96a89f;
+  --line: #24332d;
+  --neon: #ffe08a;
+  --neon-glow: rgba(224, 168, 26, 0.85);
+  --bolt: #fff1b8;
+  --accent: #e0a81a;
+  --accent-ink: #efc151;
+  --on-accent: #1b1300;
+  --sq-light: #53695f;
+  --sq-dark: #2e433b;
+  --hl: rgba(224, 168, 26, 0.55);
+  --pw-fill: #f6f9f7;
+  --pw-edge: #0b110f;
+  --pb-fill: #0b110f;
+  --pb-edge: #aebfb8;
+  --coord-on-light: #2e433b;
+  --coord-on-dark: #aebfb8;
+  --portrait-shadow: #2e433b;
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #eef1ef;
+    --surface: #f8faf9;
+    --surface-2: #e6ece9;
+    --fg: #14201c;
+    --muted: #53635d;
+    --line: #c9d3cf;
+    --neon: #7a4f00;
+    --neon-glow: rgba(224, 168, 26, 0.4);
+    --bolt: #c98f00;
+    --accent: #e0a81a;
+    --accent-ink: #7a5300;
+    --on-accent: #1b1300;
+    --sq-light: #e3e9e5;
+    --sq-dark: #6f9088;
+    --hl: rgba(224, 168, 26, 0.62);
+    --pw-fill: #ffffff;
+    --pw-edge: #17231f;
+    --pb-fill: #17231f;
+    --pb-edge: #17231f;
+    --coord-on-light: #5b7a72;
+    --coord-on-dark: #e3e9e5;
+    --portrait-shadow: #6f9088;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #eef1ef;
+  --surface: #f8faf9;
+  --surface-2: #e6ece9;
+  --fg: #14201c;
+  --muted: #53635d;
+  --line: #c9d3cf;
+  --neon: #7a4f00;
+  --neon-glow: rgba(224, 168, 26, 0.4);
+  --bolt: #c98f00;
+  --accent: #e0a81a;
+  --accent-ink: #7a5300;
+  --on-accent: #1b1300;
+  --sq-light: #e3e9e5;
+  --sq-dark: #6f9088;
+  --hl: rgba(224, 168, 26, 0.62);
+  --pw-fill: #ffffff;
+  --pw-edge: #17231f;
+  --pb-fill: #17231f;
+  --pb-edge: #17231f;
+  --coord-on-light: #5b7a72;
+  --coord-on-dark: #e3e9e5;
+  --portrait-shadow: #6f9088;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 40px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  background: var(--bg);
+}
+a { color: var(--accent-ink); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; }
+h1, h2, h3, p { margin: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-ink); }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance; }
+.lead { color: var(--muted); max-width: 54ch; }
+.todo { font-family: var(--font-mono); font-size: 0.85em; color: var(--accent-ink); border: 1px dashed var(--accent-ink); padding: 0 6px; }
+
+/*Pemilihan Nav*/
+.nav-wrap { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; display: flex; justify-content: center; padding-block: 12px; pointer-events: none; }
+.pill {
+  pointer-events: auto;
+  display: flex; align-items: center; gap: 12px;
+  max-width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 6px 6px 8px;
+}
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; letter-spacing: -0.01em; flex: none; }
+.logo img { display: block; width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: center 18%; border: 1px solid var(--line); }
+.logo span { display: none; }
+.links { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.links::-webkit-scrollbar { display: none; }
+.links a { color: var(--muted); text-decoration: none; font-size: 0.86rem; padding: 7px 11px; border-radius: 999px; white-space: nowrap; }
+.links a:hover { color: var(--fg); background: var(--surface-2); }
+.icon-btn { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--fg); display: grid; place-items: center; cursor: pointer; }
+.icon-btn:hover { background: var(--surface-2); }
+.cta-pill { display: none; flex: none; text-decoration: none; background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 0.86rem; padding: 8px 16px; border-radius: 999px; }
+@media (min-width: 760px) { .logo span { display: inline; } .cta-pill { display: inline-block; } .pill { gap: 16px; padding-left: 10px; } }
+
+/* Hero */
+.hero { padding: 24px 0 40px; display: grid; gap: 28px; justify-items: center; text-align: center; }
+.stage { position: relative; isolation: isolate; width: 100%; display: grid; justify-items: center; gap: clamp(22px, 4vw, 36px); padding-block: 12px 8px; overflow: hidden; }
+.flash { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; background: radial-gradient(60% 55% at 50% 72%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 72%); animation: flash 6s linear infinite; }
+.bolt { position: absolute; z-index: -1; top: 36%; bottom: 0; width: clamp(70px, 14vw, 150px); pointer-events: none; opacity: 0; fill: none; stroke: var(--bolt); stroke-width: 3; stroke-linejoin: miter; stroke-linecap: square; filter: drop-shadow(0 0 5px var(--neon-glow)) drop-shadow(0 0 16px var(--neon-glow)); animation: strike 6s linear infinite; }
+.bolt.l { left: 1%; }
+.bolt.r { right: 1%; transform: scaleX(-1); animation-delay: -3s; }
+.ghost { position: relative; margin: 0; display: grid; justify-items: center; font-family: var(--font-display); font-weight: 800; font-size: clamp(3rem, 15vw, 8.5rem); line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase; color: var(--neon); text-shadow: 0 0 4px var(--neon-glow), 0 0 14px var(--neon-glow), 0 0 34px var(--neon-glow); user-select: none; animation: surge 6s linear infinite; }
+.ghost span { display: block; }
+.ghost i { font-style: normal; display: inline-block; animation: ignite 1.5s both; animation-delay: calc(var(--i) * 90ms); }
+.ghost i.fl { animation: ignite 1.5s both, buzz 5s linear infinite; animation-delay: calc(var(--i) * 90ms), 2.4s; }
+@keyframes ignite { 0% { opacity: 0; } 8% { opacity: 0.9; } 12% { opacity: 0.1; } 20% { opacity: 1; } 27% { opacity: 0.25; } 34%, 100% { opacity: 1; } }
+@keyframes buzz { 0%, 90%, 100% { opacity: 1; } 91% { opacity: 0.25; } 92% { opacity: 1; } 94% { opacity: 0.4; } 95% { opacity: 1; } }
+@keyframes strike { 0%, 40%, 47%, 100% { opacity: 0; } 41%, 44% { opacity: 1; } 43% { opacity: 0.2; } }
+@keyframes flash { 0%, 40%, 48%, 90%, 98%, 100% { opacity: 0; } 41%, 91% { opacity: 0.9; } 43%, 93% { opacity: 0.2; } 44%, 94% { opacity: 0.8; } }
+@keyframes surge { 0%, 40%, 43%, 48%, 90%, 98%, 100% { filter: brightness(1); } 41%, 91% { filter: brightness(1.6); } 44%, 94% { filter: brightness(1.45); } }
+@media (prefers-reduced-motion: reduce) { .ghost, .ghost i, .ghost i.fl, .flash, .bolt { animation: none; } }
+.portrait { position: relative; z-index: 1; width: clamp(190px, 32vw, 290px); aspect-ratio: 1; margin: 0; }
+.portrait::before { content: ""; position: absolute; inset: 10px -10px -10px 10px; background: var(--portrait-shadow); }
+.portrait img { position: relative; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; border: 1px solid var(--line); }
+.hero .role { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.2rem, 3.2vw, 1.7rem); letter-spacing: -0.015em; text-wrap: balance; max-width: 30ch; }
+.hero .lede { color: var(--muted); max-width: 56ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 0; margin: 0; list-style: none; font-family: var(--font-mono); font-size: 0.78rem; }
+.chips li { border: 1px solid var(--line); background: var(--surface); padding: 5px 10px; }
+.chips b { font-weight: 500; color: var(--accent-ink); }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.92rem; padding: 11px 20px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg); background: var(--surface); }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+
+/* Section */
+.sec { padding-block: 72px 24px; scroll-margin-top: 72px; border-top: 1px solid var(--line); }
+.hero + .sec { margin-top: 24px; }
+.sec-head { display: grid; gap: 14px; margin-bottom: 36px; }
+.sec-head .lead { margin-top: 2px; }
+
+/* Work */
+.work { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; border: 1px solid var(--line); background: var(--surface); padding: 22px; }
+@media (min-width: 900px) { .work { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); padding: 36px; gap: 48px; align-items: center; } }
+.work h3 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 6vw, 3.2rem); letter-spacing: -0.03em; line-height: 1; margin: 12px 0 14px; }
+.work p.d { color: var(--muted); max-width: 46ch; margin-bottom: 20px; }
+.status { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.76rem; color: var(--on-accent); background: var(--accent); padding: 3px 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.tags li { font-family: var(--font-mono); font-size: 0.78rem; border: 1px solid var(--line); background: var(--surface-2); padding: 4px 9px; }
+.game { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 6px; justify-items: start; }
+.game .players { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; }
+.game .players b { color: var(--accent-ink); font-weight: 700; }
+.game .players span { color: var(--muted); font-family: var(--font-mono); font-size: 0.8rem; margin: 0 4px; }
+.game .meta { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); }
+.game a { font-family: var(--font-mono); font-size: 0.8rem; }
+.board-box { min-width: 0; }
+.board { container-type: inline-size; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); aspect-ratio: 1; width: 100%; max-width: 420px; margin: 0 auto; border: 1px solid var(--line); }
+.sq { position: relative; display: flex; align-items: center; justify-content: center; min-width: 0; }
+.sq.l { background: var(--sq-light); }
+.sq.d { background: var(--sq-dark); }
+.sq.hl::after { content: ""; position: absolute; inset: 0; background: var(--hl); }
+.sq .c { position: absolute; font-family: var(--font-mono); font-size: 0.6rem; line-height: 1; z-index: 2; }
+.sq .c.r { top: 3px; left: 4px; }
+.sq .c.f { bottom: 3px; right: 4px; }
+.sq.l .c { color: var(--coord-on-light); }
+.sq.d .c { color: var(--coord-on-dark); }
+.pc { position: relative; z-index: 1; font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "DejaVu Sans", "Apple Symbols", sans-serif; font-size: 1.8rem; font-size: 9.6cqw; line-height: 1; user-select: none; -webkit-text-stroke: 1px; paint-order: stroke fill; }
+.pc.w { color: var(--pw-fill); -webkit-text-stroke-color: var(--pw-edge); }
+.pc.b { color: var(--pb-fill); -webkit-text-stroke-color: var(--pb-edge); }
+.controls { display: flex; gap: 8px; align-items: center; justify-content: center; margin: 14px auto 8px; max-width: 420px; flex-wrap: wrap; }
+.controls button { font-family: var(--font-mono); font-size: 0.8rem; color: var(--fg); background: var(--surface-2); border: 1px solid var(--line); padding: 8px 14px; min-height: 40px; min-width: 44px; cursor: pointer; }
+.controls button:hover { border-color: var(--accent); }
+.controls button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.opening { text-align: center; font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); margin: 0 auto 10px; max-width: 420px; }
+.moves { display: flex; flex-wrap: wrap; gap: 2px; max-width: 420px; max-height: 9.5rem; overflow-y: auto; margin: 0 auto; font-family: var(--font-mono); font-size: 0.8rem; }
+.moves .n { color: var(--muted); padding: 5px 2px 5px 6px; }
+.moves button { font: inherit; color: var(--fg); background: none; border: 0; padding: 5px 6px; cursor: pointer; }
+.moves button:hover { background: var(--surface-2); }
+.moves button[aria-current="true"] { background: var(--accent); color: var(--on-accent); }
+
+/* What I can do */
+.can { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+@media (min-width: 900px) { .can { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; } }
+.tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 28px; max-width: 420px; }
+.tool { aspect-ratio: 1; display: grid; place-items: center; text-align: center; border: 1px solid var(--line); background: var(--surface); font-family: var(--font-mono); font-size: 0.74rem; padding: 4px; }
+.cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 640px) { .cards { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.card { border: 1px solid var(--line); background: var(--surface); padding: 24px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.card .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.card .num { font-family: var(--font-display); font-weight: 800; font-size: 3rem; line-height: 1; letter-spacing: -0.04em; color: var(--accent-ink); }
+.card .kind { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: right; }
+.card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; letter-spacing: -0.015em; line-height: 1.2; }
+.card p { color: var(--muted); font-size: 0.95rem; }
+.card .tags { margin-top: auto; }
+
+/* Achievement */
+.ach { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.ach li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 760px) { .ach li { grid-template-columns: 90px minmax(0, 1fr) 200px; gap: 28px; } .ach li.no-photo { grid-template-columns: 90px minmax(0, 1fr); } }
+.ach .yr { font-family: var(--font-mono); font-size: 1.05rem; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.ach h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; letter-spacing: -0.015em; line-height: 1.2; }
+.ach .res { display: inline-block; font-family: var(--font-mono); font-size: 0.74rem; border: 1px solid var(--accent-ink); color: var(--accent-ink); padding: 2px 9px; margin: 10px 0 8px; }
+.ach .res.podium { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.ach .org { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); margin-bottom: 6px; }
+.ach p { color: var(--muted); font-size: 0.95rem; max-width: 56ch; }
+.ach figure { margin: 0; min-width: 0; }
+.ach img { display: block; width: 100%; max-width: 100%; height: auto; border: 1px solid var(--line); }
+.ach figcaption { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-top: 6px; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
+@media (min-width: 900px) { .about { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; } }
+.id { display: flex; gap: 18px; align-items: center; margin-bottom: 22px; }
+.id img { width: 84px; height: 84px; object-fit: cover; object-position: center 20%; border: 1px solid var(--line); flex: none; }
+.id dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 14px; font-size: 0.92rem; }
+.id dt { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.id dd { margin: 0; font-weight: 500; }
+.about .desc { color: var(--muted); max-width: 58ch; margin-bottom: 22px; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.stat { border: 1px solid var(--line); background: var(--surface); padding: 14px 12px; }
+.stat b { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.5rem, 5vw, 2.2rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stat span { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+.pgn { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin-bottom: 8px; line-height: 1.7; }
+.edu { list-style: none; padding: 0; margin: 0; counter-reset: mv; }
+.edu li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); counter-increment: mv; }
+.edu li::before { content: counter(mv) "."; font-family: var(--font-mono); color: var(--accent-ink); }
+.edu .who { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+.edu .meta { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); }
+.edu .now { font-family: var(--font-mono); font-size: 0.7rem; color: var(--on-accent); background: var(--accent); padding: 1px 6px; margin-left: 8px; vertical-align: 2px; }
+.acts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 40px; }
+@media (min-width: 760px) { .acts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.act { border: 1px solid var(--line); background: var(--surface); padding: 16px 18px; }
+.act small { display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 4px; }
+.act b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+.act p { color: var(--muted); font-size: 0.9rem; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+@media (min-width: 900px) { .contact { grid-template-columns: minmax(0, 1fr) minmax(0, 480px); gap: 56px; align-items: center; } }
+.contact h2 { font-size: clamp(2.4rem, 8vw, 4.6rem); text-transform: uppercase; margin: 14px 0 18px; }
+.rows { display: grid; gap: 8px; }
+.crow { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; border: 1px solid var(--line); background: var(--surface); padding: 14px 18px; min-width: 0; }
+.crow small { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.crow .val { overflow-wrap: anywhere; font-weight: 500; }
+.crow .val a { color: var(--fg); }
+.copy { font-family: var(--font-mono); font-size: 0.74rem; color: var(--fg); background: var(--surface-2); border: 1px solid var(--line); padding: 6px 10px; cursor: pointer; }
+.copy:hover { border-color: var(--accent); }
+.rows .btn { text-align: center; margin-top: 6px; }
+
+footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<div class="nav-wrap">
+  <div class="pill">
+    <a class="logo" href="#top" aria-label="Ke atas"><img src="foto-profil.jpg" width="32" height="32" alt=""><span>Dimas Sunaryadi</span></a>
+    <nav class="links" aria-label="Navigasi bagian">
+      <a href="#work">Work</a>
+      <a href="#can-do">What I Can Do</a>
+      <a href="#achievement">Achievement</a>
+      <a href="#about">About</a>
+    </nav>
+    <button id="theme" class="icon-btn" type="button" aria-label="Ganti tema terang atau gelap">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
+    </button>
+    <a class="cta-pill" href="#contact">Hubungi Saya</a>
+  </div>
+</div>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <div class="stage">
+      <div class="flash" aria-hidden="true"></div>
+      <svg class="bolt l" viewBox="0 0 100 260" aria-hidden="true"><path d="M70 0 L38 82 L62 90 L22 178 L46 184 L10 260"/><path d="M62 90 L86 126"/></svg>
+      <svg class="bolt r" viewBox="0 0 100 260" aria-hidden="true"><path d="M70 0 L38 82 L62 90 L22 178 L46 184 L10 260"/><path d="M22 178 L4 204"/></svg>
+      <figure class="portrait"><img src="foto-profil.jpg" width="800" height="800" alt="Foto Dimas Sunaryadi berjas biru dengan latar merah"></figure>
+      <h1 class="ghost" aria-label="Dimas Sunaryadi"><span aria-hidden="true"><i style="--i:0">D</i><i style="--i:1">i</i><i style="--i:2">m</i><i class="fl" style="--i:3">a</i><i style="--i:4">s</i></span><span aria-hidden="true"><i style="--i:5">S</i><i style="--i:6">u</i><i style="--i:7">n</i><i style="--i:8">a</i><i class="fl" style="--i:9">r</i><i style="--i:10">y</i><i style="--i:11">a</i><i class="fl" style="--i:12">d</i><i style="--i:13">i</i></span></h1>
+    </div>
+    <p class="role">Mahasiswa Teknik Informatika dan pemain catur kompetitif.</p>
+    <p class="lede">Saya membangun perangkat lunak dan membaca pasar dengan cara yang sama seperti bermain catur: hitung variasinya, pilih langkah terkuat, lalu eksekusi.</p>
+    <ul class="chips">
+      <li>Arena Candidate Master <b>ACM</b></li>
+      <li>Peak Bullet <b>2703</b></li>
+      <li>UNESA <b>2026</b></li>
+      <li>Asal <b>Tuban, Jawa Timur</b></li>
+    </ul>
+    <div class="btns">
+      <a class="btn primary" href="#work">Lihat Karya</a>
+      <a class="btn" href="#contact">Hubungi Saya</a>
+    </div>
+  </header>
+
+  <section class="sec" id="work">
+    <div class="sec-head">
+      <div class="eyebrow">Selected work</div>
+      <h2>Work Gallery</h2>
+      <p class="lead">Proyek yang sedang saya kerjakan.</p>
+    </div>
+    <article class="work">
+      <div>
+        <span class="status">pending</span>
+        <h3>dichess</h3>
+        <p class="d">Website catur bergaya chess.com dengan puzzle, sistem rating Elo, dan fitur menarik lainnya. Proyek ini masih dalam pengerjaan.</p>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        <div class="game">
+          <div class="eyebrow">Demo papan · partai puncak</div>
+          <p class="players"><b>DIMASJATIM</b> 2703 <span>vs</span> NM Superbeans 2691</p>
+          <p class="meta">1-0 · Bullet 1 menit · 22 Oktober 2026 · Pirc Defense (B07)</p>
+          <p class="meta">Superbeans mundur setelah 21...Qxb6. Putar ulang partainya di papan.</p>
+          <a href="https://www.chess.com/game/live/185761794618?username=dimasjatim" target="_blank" rel="noopener">Lihat partai di Chess.com</a>
+        </div>
+      </div>
+      <div class="board-box">
+        <div id="board" class="board" role="img" aria-label="Papan catur dengan partai DIMASJATIM melawan Superbeans"></div>
+        <div class="controls">
+          <button id="b-reset" type="button" aria-label="Kembali ke awal">|&lt;</button>
+          <button id="b-prev" type="button" aria-label="Langkah sebelumnya">&lt;</button>
+          <button id="b-play" type="button" aria-pressed="false">putar</button>
+          <button id="b-next" type="button" aria-label="Langkah berikutnya">&gt;</button>
+        </div>
+        <p class="opening" id="opening">Pirc Defense</p>
+        <div id="moves" class="moves" aria-label="Daftar langkah"></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec" id="can-do">
+    <div class="can">
+      <div>
+        <div class="eyebrow">My capabilities</div>
+        <h2 style="margin: 14px 0 16px">What I Can Do</h2>
+        <p class="lead">Saya menggabungkan keterampilan teknis, analisis, dan kebiasaan berpikir strategis dari catur.</p>
+        <div class="tools" aria-label="Tools yang dipakai">
+          <div class="tool">HTML</div><div class="tool">CSS</div><div class="tool">JS</div><div class="tool">C++</div>
+          <div class="tool">Git</div><div class="tool">VS Code</div><div class="tool">Figma</div><div class="tool">MQL5</div>
+          <div class="tool">MT5</div><div class="tool">Trading View</div><div class="tool">SMC</div><div class="tool">ICT</div>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="top"><span class="num">01</span><span class="kind">Web dan software</span></div>
+          <h3>Pengembangan web dan UI</h3>
+          <p>Membangun halaman web dari desain di Figma sampai kode yang berjalan, dan menulis program dasar dengan C++.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>C++</li><li>Git</li><li>Figma</li></ul>
+        </article>
+        <article class="card">
+          <div class="top"><span class="num">02</span><span class="kind">Catur dan pasar</span></div>
+          <h3>Strategi, coaching, dan analisis teknikal</h3>
+          <p>Bermain dan mengajar catur, membaca grafik dengan konsep SMC dan ICT, serta membuat indikator sendiri di MetaTrader 5.</p>
+          <ul class="tags"><li>Chess coaching</li><li>MetaTrader 5</li><li>MQL5</li><li>Order Block</li><li>FVG</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="achievement">
+    <div class="sec-head">
+      <div class="eyebrow">Track record</div>
+      <h2>Achievement</h2>
+      <p class="lead">Hasil turnamen catur dari tingkat kabupaten sampai nasional.</p>
+    </div>
+    <ol class="ach">
+      <li class="no-photo">
+        <div class="yr">2026</div>
+        <div>
+          <h3>Bojonegoro Chess Competition</h3>
+          <span class="res podium">Juara 2</span>
+          <div class="org">Bojonegoro</div>
+          <p>Turnamen catur di Bojonegoro, Jawa Timur, pada 2026.</p>
+        </div>
+      </li>
+      <li class="no-photo">
+        <div class="yr">2026</div>
+        <div>
+          <h3>Turnamen Vallthera Chess</h3>
+          <span class="res podium">Juara 3</span>
+          <div class="org">Online · Peserta dari berbagai provinsi</div>
+          <p>Peringkat 3 pada klasemen akhir dengan 5,00 poin. Pesertanya berasal dari berbagai provinsi di Indonesia.</p>
+        </div>
+      </li>
+      <li>
+        <div class="yr">2025</div>
+        <div>
+          <h3>Pra Porprov</h3>
+          <span class="res">Lolos</span>
+          <div class="org">Kediri</div>
+          <p>Lolos dari babak pra Porprov di Kediri.</p>
+        </div>
+        <figure>
+          <img src="dok-arena.jpg" width="475" height="388" alt="Ruang pertandingan Pra Porprov di Kediri dengan banyak peserta dan papan catur" loading="lazy">
+          <figcaption>Ruang pertandingan Pra Porprov</figcaption>
+        </figure>
+      </li>
+      <li>
+        <div class="yr">2025</div>
+        <div>
+          <h3>Kejurnas Catur Polinema Cup</h3>
+          <span class="res podium">Juara Harapan 1</span>
+          <div class="org">Polinema · 9 Februari 2025 · Tingkat nasional</div>
+          <p>Peringkat 4 pada kejuaraan nasional untuk kategori SMA dan mahasiswa.</p>
+        </div>
+        <figure>
+          <img src="dok-piala.jpg" width="409" height="241" alt="Dimas memegang piala di depan spanduk Kejurnas Catur Polinema Cup 2025" loading="lazy">
+          <figcaption>Penyerahan piala</figcaption>
+        </figure>
+      </li>
+      <li>
+        <div class="yr">2024</div>
+        <div>
+          <h3>POPDA Catur Tuban</h3>
+          <span class="res podium">Juara 3</span>
+          <div class="org">Kabupaten Tuban</div>
+          <p>Pekan Olahraga Pelajar Daerah (POPDA) cabang catur.</p>
+        </div>
+        <figure>
+          <img src="dok-penghargaan.jpg" width="180" height="121" alt="Penyerahan penghargaan POPDA di depan spanduk acara" loading="lazy">
+          <figcaption>Penyerahan penghargaan</figcaption>
+        </figure>
+      </li>
+      <li class="no-photo">
+        <div class="yr">2023</div>
+        <div>
+          <h3>POPDA Catur Tuban</h3>
+          <span class="res podium">Juara 2</span>
+          <div class="org">Kabupaten Tuban</div>
+          <p>Pekan Olahraga Pelajar Daerah (POPDA) cabang catur.</p>
+        </div>
+      </li>
+      <li class="no-photo">
+        <div class="yr">2022</div>
+        <div>
+          <h3>POPDA Catur Tuban</h3>
+          <span class="res podium">Juara 2</span>
+          <div class="org">Kabupaten Tuban</div>
+          <p>Lomba catur pertama saya, dan berhasil meraih juara saat masih SMP.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="sec-head">
+      <div class="eyebrow">About me</div>
+      <h2>Pemikir strategis. Calon software engineer.</h2>
+    </div>
+    <div class="about">
+      <div>
+        <div class="id">
+          <img src="foto-profil.jpg" width="800" height="800" alt="Foto Dimas Sunaryadi">
+          <dl>
+            <dt>Nama</dt><dd>Dimas Sunaryadi</dd>
+            <dt>NIM</dt><dd>26051204057</dd>
+            <dt>Prodi</dt><dd>Teknik Informatika</dd>
+            <dt>Kampus</dt><dd>UNESA</dd>
+            <dt>Asal</dt><dd>Tuban, Jawa Timur</dd>
+          </dl>
+        </div>
+        <p class="desc">Saya berasal dari Tuban, Jawa Timur, dan kini mahasiswa S1 Teknik Informatika di Universitas Negeri Surabaya. Saya tertarik pada pengembangan perangkat lunak, analisis data, dan pemikiran strategis yang saya asah lewat catur kompetitif, ditambah analisis pasar finansial secara teknikal.</p>
+        <div class="stats">
+          <div class="stat"><b>2703</b><span>Peak bullet</span></div>
+          <div class="stat"><b>7</b><span>Hasil turnamen</span></div>
+          <div class="stat"><b>2030</b><span>Target lulus</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: 8px">Pendidikan</div>
+        <ol class="edu">
+          <li><div><div class="who">SDN Kebonsari 1 Tuban</div><div class="meta">2014 – 2020 · Kepramukaan</div></div></li>
+          <li><div><div class="who">SMP Negeri 1 Tuban</div><div class="meta">2020 – 2023 · Kepramukaan</div></div></li>
+          <li><div><div class="who">SMA Negeri 1 Tuban</div><div class="meta">2023 – 2026 · Dewan Ambalan Pramuka, ROHIS</div></div></li>
+          <li><div><div class="who">Universitas Negeri Surabaya<span class="now">berjalan</span></div><div class="meta">2026 – 2030 · S1 Teknik Informatika</div></div></li>
+        </ol>
+      </div>
+    </div>
+    <div class="acts">
+      <div class="act"><small>Building</small><b>dichess</b><p>Website catur dengan puzzle dan rating Elo.</p></div>
+      <div class="act"><small>Exploring</small><b>Analisis teknikal</b><p>SMC dan ICT di MetaTrader 5 dan TradingView.</p></div>
+      <div class="act"><small>Learning</small><b>Teknik Informatika</b><p>Peserta Ameliorer 2026, Fakultas Teknik UNESA.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">Get in touch</div>
+        <h2>Mari bermain, mari membangun.</h2>
+        <p class="lead">Terbuka untuk kolaborasi proyek web, sparring catur, dan diskusi soal analisis pasar.</p>
+      </div>
+      <div class="rows">
+        <div class="crow">
+          <div><small>Email</small><div class="val"><a href="mailto:dimassunaryadi4@gmail.com">dimassunaryadi4@gmail.com</a></div></div>
+          <button class="copy" type="button" data-copy="dimassunaryadi4@gmail.com">salin</button>
+        </div>
+        <div class="crow">
+          <div><small>GitHub</small><div class="val"><a href="https://github.com/Dimskuy400" target="_blank" rel="noopener">github.com/Dimskuy400</a></div></div>
+          <button class="copy" type="button" data-copy="https://github.com/Dimskuy400">salin</button>
+        </div>
+        <div class="crow">
+          <div><small>LinkedIn</small><div class="val"><a href="https://www.linkedin.com/in/dimas-sunaryadi-9359b3415/" target="_blank" rel="noopener">linkedin.com/in/dimas-sunaryadi-9359b3415</a></div></div>
+          <button class="copy" type="button" data-copy="https://www.linkedin.com/in/dimas-sunaryadi-9359b3415/">salin</button>
+        </div>
+        <div class="crow">
+          <div><small>CV / Resume</small><div class="val"><a href="https://lnkd.in/p/g5HYfRHG" target="_blank" rel="noopener">Buka CV</a></div></div>
+          <button class="copy" type="button" data-copy="https://lnkd.in/p/g5HYfRHG">salin</button>
+        </div>
+        <a class="btn primary" href="https://www.linkedin.com/in/dimas-sunaryadi-9359b3415/" target="_blank" rel="noopener">Kirim pesan lewat LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Dimas Sunaryadi</span>
+    <span>Teknik Informatika · UNESA</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  /* Tema */
+  var root = document.documentElement;
+  document.getElementById("theme").addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme");
+    if (!cur) cur = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    root.setAttribute("data-theme", cur === "light" ? "dark" : "light");
+  });
+
+  /* Tombol salin di bagian kontak */
+  Array.prototype.forEach.call(document.querySelectorAll(".copy"), function (cp) {
+    cp.addEventListener("click", function () {
+      function done(ok) { cp.textContent = ok ? "tersalin" : "pilih manual"; setTimeout(function () { cp.textContent = "salin"; }, 1600); }
+      try {
+        navigator.clipboard.writeText(cp.getAttribute("data-copy")).then(function () { done(true); }, function () { done(false); });
+      } catch (e) { done(false); }
+    });
+  });
+
+  /* Papan catur */
+  var GLYPH = { K: "♚", Q: "♛", R: "♜", B: "♝", N: "♞", P: "♟" };
+  var files = "abcdefgh";
+  function startPosition() {
+    var p = {};
+    var back = ["R", "N", "B", "Q", "K", "B", "N", "R"];
+    for (var i = 0; i < 8; i++) {
+      p[files[i] + "1"] = { t: back[i], c: "w" };
+      p[files[i] + "2"] = { t: "P", c: "w" };
+      p[files[i] + "7"] = { t: "P", c: "b" };
+      p[files[i] + "8"] = { t: back[i], c: "b" };
+    }
+    return p;
+  }
+  /* DIMASJATIM vs Superbeans, Chess.com, 22 Oktober 2026. Format: [SAN, dari, ke] */
+  var MOVES = [
+    ["d4","d2","d4"],["Nf6","g8","f6"],
+    ["Nc3","b1","c3"],["g6","g7","g6"],
+    ["e4","e2","e4"],["d6","d7","d6"],
+    ["f4","f2","f4"],["Bg7","f8","g7"],
+    ["Nf3","g1","f3"],["O-O","e8","g8"],
+    ["Bd3","f1","d3"],["e5","e7","e5"],
+    ["fxe5","f4","e5"],["dxe5","d6","e5"],
+    ["d5","d4","d5"],["c6","c7","c6"],
+    ["dxc6","d5","c6"],["Nxc6","b8","c6"],
+    ["O-O","e1","g1"],["Bg4","c8","g4"],
+    ["Be3","c1","e3"],["Rc8","a8","c8"],
+    ["h3","h2","h3"],["Bxf3","g4","f3"],
+    ["Qxf3","d1","f3"],["Nd4","c6","d4"],
+    ["Qf2","f3","f2"],["Nh5","f6","h5"],
+    ["Nd5","c3","d5"],["Ne6","d4","e6"],
+    ["Bxa7","e3","a7"],["Nd4","e6","d4"],
+    ["c3","c2","c3"],["Ne6","d4","e6"],
+    ["Bb6","a7","b6"],["Qd6","d8","d6"],
+    ["Rad1","a1","d1"],["Nef4","e6","f4"],
+    ["Bc2","d3","c2"],["Qe6","d6","e6"],
+    ["Bb3","c2","b3"],["Qxb6","e6","b6"]
+  ];
+  var boardEl = document.getElementById("board");
+  var movesEl = document.getElementById("moves");
+  var openingEl = document.getElementById("opening");
+  var playBtn = document.getElementById("b-play");
+  var idx = MOVES.length;
+  var timer = null;
+
+  function positionAt(n) {
+    var p = startPosition();
+    for (var i = 0; i < n; i++) {
+      var m = MOVES[i];
+      var mover = p[m[1]];
+      p[m[2]] = mover;
+      delete p[m[1]];
+      if (mover.t === "K" && Math.abs(files.indexOf(m[2][0]) - files.indexOf(m[1][0])) === 2) {
+        var rk = m[2][1];
+        var short = m[2][0] === "g";
+        p[(short ? "f" : "d") + rk] = p[(short ? "h" : "a") + rk];
+        delete p[(short ? "h" : "a") + rk];
+      }
+    }
+    return p;
+  }
+  function renderBoard() {
+    var pos = positionAt(idx);
+    var last = idx > 0 ? MOVES[idx - 1] : null;
+    var html = "";
+    for (var r = 8; r >= 1; r--) {
+      for (var f = 0; f < 8; f++) {
+        var sq = files[f] + r;
+        var light = (f + r) % 2 === 1;
+        var cls = "sq " + (light ? "l" : "d");
+        if (last && (sq === last[1] || sq === last[2])) cls += " hl";
+        var inner = "";
+        if (f === 0) inner += '<span class="c r">' + r + "</span>";
+        if (r === 1) inner += '<span class="c f">' + files[f] + "</span>";
+        var pc = pos[sq];
+        if (pc) inner += '<span class="pc ' + pc.c + '">' + GLYPH[pc.t] + "︎</span>";
+        html += '<div class="' + cls + '">' + inner + "</div>";
+      }
+    }
+    boardEl.innerHTML = html;
+    var label = idx === 0 ? "Posisi awal" : "Setelah langkah " + Math.ceil(idx / 2) + (idx % 2 === 1 ? ". " : "... ") + MOVES[idx - 1][0];
+    boardEl.setAttribute("aria-label", "Papan catur. " + label);
+    openingEl.textContent = "Pirc Defense · " + label;
+  }
+  function renderMoves() {
+    var html = "";
+    for (var i = 0; i < MOVES.length; i++) {
+      if (i % 2 === 0) html += '<span class="n">' + (i / 2 + 1) + ".</span>";
+      html += '<button type="button" data-i="' + (i + 1) + '"' + (idx === i + 1 ? ' aria-current="true"' : "") + ">" + MOVES[i][0] + "</button>";
+    }
+    movesEl.innerHTML = html;
+  }
+  function go(n) { idx = Math.max(0, Math.min(MOVES.length, n)); renderBoard(); renderMoves(); }
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+    playBtn.setAttribute("aria-pressed", "false");
+    playBtn.textContent = "putar";
+  }
+  function play() {
+    if (idx >= MOVES.length) go(0);
+    playBtn.setAttribute("aria-pressed", "true");
+    playBtn.textContent = "jeda";
+    timer = setInterval(function () {
+      if (idx >= MOVES.length) { stop(); return; }
+      go(idx + 1);
+    }, 900);
+  }
+  document.getElementById("b-reset").addEventListener("click", function () { stop(); go(0); });
+  document.getElementById("b-prev").addEventListener("click", function () { stop(); go(idx - 1); });
+  document.getElementById("b-next").addEventListener("click", function () { stop(); go(idx + 1); });
+  playBtn.addEventListener("click", function () { if (timer) stop(); else play(); });
+  movesEl.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-i]");
+    if (b) { stop(); go(parseInt(b.getAttribute("data-i"), 10)); }
+  });
+  go(idx);
+})();
+</script>
+
+</body></html>
